@@ -149,6 +149,7 @@ body {
   width: 100%;
   overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
+  padding-top: 90px;
 }
 
 img, video, canvas, iframe {
@@ -358,12 +359,14 @@ button, input, select, textarea {
   background: var(--accent-teal);
 }
 
-/* NAVBAR */
+/* STRICTLY FIXED NAVBAR ACROSS ALL PAGES */
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 16px;
-  z-index: 100;
-  margin-bottom: 30px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .nav-container {
@@ -376,7 +379,7 @@ button, input, select, textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 10px 30px rgba(30, 27, 75, 0.06);
+  box-shadow: 0 10px 30px rgba(30, 27, 75, 0.08);
   position: relative;
 }
 
@@ -893,9 +896,9 @@ button, input, select, textarea {
   flex-direction: column;
   width: 260px;
   position: fixed;
-  top: 95px;
+  top: 105px;
   z-index: 50;
-  max-height: calc(100vh - 115px);
+  max-height: calc(100vh - 125px);
   overflow-y: auto;
 }
 
