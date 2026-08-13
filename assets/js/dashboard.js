@@ -56,6 +56,14 @@ function toggleRTL() {
   showToast(`Language direction set to ${newDir.toUpperCase()}!`, '⇄');
 }
 
+// Handle Student Log Out -> Redirects to Index Homepage
+function handleLogout() {
+  showToast('👋 Logging out of Leo\'s Student Dashboard...', '🚪');
+  setTimeout(() => {
+    window.location.href = 'index.html';
+  }, 1000);
+}
+
 // Tab Switching
 function switchDashTab(tabId, btnElement) {
   const sections = document.querySelectorAll('.dash-section');

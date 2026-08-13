@@ -865,16 +865,17 @@ button, input, select, textarea {
   color: var(--text-muted);
 }
 
-/* DASHBOARD SPECIFIC STYLES */
+/* DASHBOARD SPECIFIC STYLES - FIXED STICKY SIDEBAR */
 .dashboard-layout {
   display: grid;
   grid-template-columns: 280px 1fr;
   gap: 32px;
   padding: 20px 0 60px;
   min-height: calc(100vh - 120px);
+  position: relative;
 }
 
-/* Sidebar Navigation */
+/* Fixed Sticky Sidebar Navigation */
 .dashboard-sidebar {
   background: var(--bg-surface);
   border-radius: 32px;
@@ -884,22 +885,25 @@ button, input, select, textarea {
   display: flex;
   flex-direction: column;
   height: fit-content;
+  max-height: calc(100vh - 120px);
   position: sticky;
-  top: 100px;
+  top: 90px;
+  z-index: 50;
+  overflow-y: auto;
 }
 
 .student-mini-profile {
   display: flex;
   align-items: center;
   gap: 14px;
-  padding-bottom: 24px;
-  margin-bottom: 24px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
   border-bottom: 1px solid var(--border-light);
 }
 
 .student-avatar {
-  width: 56px;
-  height: 56px;
+  width: 54px;
+  height: 54px;
   border-radius: 20px;
   overflow: hidden;
   background: var(--primary-light);
@@ -935,10 +939,10 @@ button, input, select, textarea {
   display: flex;
   align-items: center;
   gap: 14px;
-  padding: 14px 18px;
+  padding: 13px 16px;
   border-radius: 18px;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: var(--text-muted);
   background: transparent;
   border: none;
@@ -965,27 +969,27 @@ button, input, select, textarea {
 }
 
 .student-streak-card {
-  margin-top: 32px;
+  margin-top: 24px;
   background: linear-gradient(135deg, #FFF7ED, #FFEDD5);
   border: 1px solid #FDBA74;
-  border-radius: 22px;
-  padding: 18px;
+  border-radius: 20px;
+  padding: 16px;
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
 }
 
 .streak-fire {
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 .streak-text h5 {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #9A3412;
 }
 
 .streak-text p {
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   color: #C2410C;
 }
 
@@ -1342,6 +1346,7 @@ button, input, select, textarea {
   .dashboard-sidebar {
     position: static;
     width: 100%;
+    max-height: none;
     align-items: center;
     text-align: center;
   }
