@@ -865,31 +865,38 @@ button, input, select, textarea {
   color: var(--text-muted);
 }
 
-/* DASHBOARD SPECIFIC STYLES - COMPACT STICKY SIDEBAR */
+/* DASHBOARD SPECIFIC STYLES - STRICTLY FIXED SIDEBAR */
 .dashboard-layout {
-  display: grid;
-  grid-template-columns: 280px 1fr;
+  display: flex;
   gap: 32px;
   padding: 20px 0 60px;
   min-height: calc(100vh - 120px);
   position: relative;
 }
 
-/* Fixed Sticky Sidebar Navigation */
+/* Fixed Sidebar Navigation */
 .dashboard-sidebar {
   background: var(--bg-surface);
-  border-radius: 32px;
-  padding: 24px 18px;
+  border-radius: 28px;
+  padding: 20px 16px;
   box-shadow: var(--shadow-md);
   border: 1px solid var(--border-light);
   display: flex;
   flex-direction: column;
-  height: fit-content;
-  max-height: calc(100vh - 110px);
-  position: sticky;
-  top: 90px;
+  width: 260px;
+  position: fixed;
+  top: 95px;
   z-index: 50;
+  max-height: calc(100vh - 115px);
   overflow-y: auto;
+}
+
+.dashboard-main {
+  margin-left: 292px;
+  width: calc(100% - 292px);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
 .student-mini-profile {
@@ -994,13 +1001,6 @@ button, input, select, textarea {
 }
 
 /* Dashboard Content Area */
-.dashboard-main {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  width: 100%;
-}
-
 .dash-topbar {
   display: flex;
   align-items: center;
@@ -1339,7 +1339,7 @@ button, input, select, textarea {
   }
 
   .dashboard-layout {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 24px;
   }
 
@@ -1349,6 +1349,11 @@ button, input, select, textarea {
     max-height: none;
     align-items: center;
     text-align: center;
+  }
+
+  .dashboard-main {
+    margin-left: 0;
+    width: 100%;
   }
 
   .student-mini-profile {

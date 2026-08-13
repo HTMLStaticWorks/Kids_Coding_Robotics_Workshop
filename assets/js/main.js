@@ -1,6 +1,6 @@
 /* 
-  MAIN LANDING PAGE INTERACTIVITY
-  RoboKidsLab Academy - Kids Coding & Robotics Workshop
+  MAIN INTERACTIVITY & GLOBAL UTILITIES
+  Kids Coding & Robotics Workshop
 */
 
 // Mobile Hamburger Menu Toggle (for <= 1024px viewports)
@@ -39,14 +39,14 @@ function toggleTheme() {
   showToast(`Theme switched to ${newTheme.toUpperCase()} mode!`, newTheme === 'dark' ? '🌙' : '☀️');
 }
 
-// RTL / LTR Language Direction Toggle (Keep Icon Only)
+// RTL / LTR Language Direction Toggle (Crisp Clean Bi-directional SVG)
 function toggleRTL() {
   const html = document.documentElement;
   const currentDir = html.getAttribute('dir');
   const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
   html.setAttribute('dir', newDir);
 
-  const rtlIconSVG = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 7h12m0 0l-4-4m4 4l-4 4m-8 6H4m0 0l4 4m-4-4l4-4"/></svg>`;
+  const rtlIconSVG = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7h12m0 0l-4-4m4 4l-4 4m-8 6H4m0 0l4 4m-4-4l4-4"/></svg>`;
 
   const rtlBtns = document.querySelectorAll('.rtl-toggle-btn');
   rtlBtns.forEach(btn => {
@@ -56,66 +56,56 @@ function toggleRTL() {
   showToast(`Language direction set to ${newDir.toUpperCase()}!`, '⇄');
 }
 
-// Filter Programs by Age/Track
-function filterPrograms(category, btnElement) {
-  const cards = document.querySelectorAll('.program-card');
-  const tabs = document.querySelectorAll('.filter-tab');
-
-  tabs.forEach(tab => tab.classList.remove('active'));
-  if (btnElement) btnElement.classList.add('active');
-
-  cards.forEach(card => {
-    const cardCat = card.getAttribute('data-category');
-    if (category === 'all' || cardCat === category) {
-      card.style.display = 'flex';
-      card.style.opacity = '1';
-    } else {
-      card.style.display = 'none';
-      card.style.opacity = '0';
-    }
-  });
-}
-
-// Login Modal Controls
+// Global Modal Open & Close Handlers
 function openLoginModal() {
   const modal = document.getElementById('loginModal');
-  if (modal) modal.classList.add('active');
+  if (modal) {
+    modal.classList.add('active');
+  }
 }
 
 function closeLoginModal() {
   const modal = document.getElementById('loginModal');
-  if (modal) modal.classList.remove('active');
+  if (modal) {
+    modal.classList.remove('active');
+  }
 }
 
-function handleLogin(e) {
+function openEnrollModal(courseName) {
+  const modal = document.getElementById('enrollModal');
+  const courseInput = document.getElementById('enrollCourseInput');
+  if (courseInput && courseName) {
+    courseInput.value = courseName;
+  }
+  if (modal) {
+    modal.classList.add('active');
+  }
+}
+
+function closeEnrollModal() {
+  const modal = document.getElementById('enrollModal');
+  if (modal) {
+    modal.classList.remove('active');
+  }
+}
+
+// Handle Form Submissions
+function handleLoginSubmit(e) {
   e.preventDefault();
   closeLoginModal();
-  showToast('🎉 Welcome back! Redirecting to Leo\'s Student Dashboard...', '🔑');
+  showToast('Welcome back! Redirecting to Student Dashboard...', '🔑');
   setTimeout(() => {
     window.location.href = 'dashboard.html';
   }, 1200);
 }
 
-// Enrollment Modal Controls
-function openEnrollModal(courseName) {
-  const modal = document.getElementById('enrollModal');
-  const title = document.getElementById('enrollCourseTitle');
-  if (title) title.innerText = `Enroll in ${courseName}`;
-  if (modal) modal.classList.add('active');
-}
-
-function closeEnrollModal() {
-  const modal = document.getElementById('enrollModal');
-  if (modal) modal.classList.remove('active');
-}
-
 function handleEnrollSubmit(e) {
   e.preventDefault();
   closeEnrollModal();
-  showToast('🚀 Seat Reserved! We sent an enrolment confirmation email to your parent.', '✨');
+  showToast('Enrollment request submitted! Our team will contact you.', '🎉');
 }
 
-// Toast Notifications
+// Toast Helper
 function showToast(msg, icon = '✨') {
   const toast = document.getElementById('toast');
   const toastMsg = document.getElementById('toastMsg');
@@ -131,11 +121,15 @@ function showToast(msg, icon = '✨') {
   }
 }
 
-// Close modals when clicking outside modal content
+// Close modals when clicking backdrop outside content
 window.addEventListener('click', (e) => {
   const loginModal = document.getElementById('loginModal');
   const enrollModal = document.getElementById('enrollModal');
 
-  if (e.target === loginModal) closeLoginModal();
-  if (e.target === enrollModal) closeEnrollModal();
+  if (e.target === loginModal) {
+    closeLoginModal();
+  }
+  if (e.target === enrollModal) {
+    closeEnrollModal();
+  }
 });
