@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student & Parent Login | RoboKidsLab Academy</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body style="min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between;">
+
+  <!-- FLOATING NAVIGATION BAR -->
+  <header class="navbar container">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon">🤖</div>
+        <span>RoboKids<span style="color: var(--primary);">Lab</span></span>
+      </a>
+
+      <!-- HAMBURGER TOGGLE BUTTON FOR <= 1024px VIEW -->
+      <button id="hamburgerBtn" class="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <div id="navMenu" class="nav-menu">
+        <div class="nav-actions">
+          <!-- Icon-Only Buttons: RTL, Theme, Back Home -->
+          <button class="toggle-btn rtl-toggle-btn" onclick="toggleRTL()" title="Toggle Language Direction RTL/LTR" aria-label="Toggle RTL/LTR">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 7h12m0 0l-4-4m4 4l-4 4m-8 6H4m0 0l4 4m-4-4l4-4"/></svg>
+          </button>
+          <button class="toggle-btn theme-toggle-btn" onclick="toggleTheme()" title="Toggle Dark/Light Theme" aria-label="Toggle Theme">🌙</button>
+          <a href="index.html" class="toggle-btn" title="Back to Home Website" aria-label="Back to Home">🏠</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- LOGIN CENTERED CONTAINER -->
+  <main class="container"
+    style="display: flex; align-items: center; justify-content: center; padding: 40px 16px; flex: 1;">
+    <div class="login-card organic-card" style="max-width: 480px; width: 100%; padding: 40px 32px; text-align: center;">
+      <div class="brand-icon" style="margin: 0 auto 16px; width: 56px; height: 56px; font-size: 1.6rem;">🤖</div>
+
+      <h2 style="font-size: 1.8rem; margin-bottom: 8px;">Student & Parent Login</h2>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 32px;">Access enrolled modules, submit
+        project work & view instructor grades.</p>
+
+      <form onsubmit="handleLogin(event)">
+        <div class="form-group">
+          <label>Student Username or Parent Email</label>
+          <input type="text" class="form-control" placeholder="e.g. leo_vance or parent@gmail.com" value="leo_vance"
+            required>
+        </div>
+
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" class="form-control" placeholder="••••••••" value="password123" required>
+        </div>
+
+        <div
+          style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; font-size: 0.85rem; flex-wrap: wrap; gap: 8px;">
+          <label style="display:flex; align-items:center; gap:8px; cursor:pointer;">
+            <input type="checkbox" checked> Remember student login
+          </label>
+          <a href="#" style="color: var(--primary); font-weight: 600;">Forgot Password?</a>
+        </div>
+
+        <button type="submit" class="pill-btn pill-btn-primary" style="width: 100%; justify-content: center;">Log In To
+          Student Dashboard →</button>
+      </form>
+
+      <div style="margin-top: 24px; font-size: 0.88rem; color: var(--text-muted);">
+        Don't have a student account? <a href="index.html#workshops"
+          style="color: var(--primary); font-weight: 700;">Enroll in a Workshop</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" style="margin-top: 40px;">
+    <div class="container">
+      <div class="footer-bottom" style="border: none; padding-top: 0;">
+        <p>© 2026 RoboKidsLab Academy. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toast" class="toast">
+    <span id="toastIcon">✨</span>
+    <span id="toastMsg">Notification message</span>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
