@@ -105,7 +105,6 @@
 
 [dir="rtl"] .hero-title,
 [dir="rtl"] .hero-desc,
-[dir="rtl"] .section-header,
 [dir="rtl"] .program-body,
 [dir="rtl"] .roadmap-step,
 [dir="rtl"] .schedule-info,
@@ -126,6 +125,7 @@
   left: auto;
   right: 14px;
 }
+
 
 /* Reset & Global */
 * {
@@ -214,6 +214,18 @@ button, input, select, textarea {
 .form-control:focus {
   border-color: var(--primary);
   box-shadow: 0 0 0 4px var(--primary-light);
+}
+
+.forgot-link {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.forgot-link:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
 }
 
 /* Organic Layout Components */
@@ -305,6 +317,19 @@ button, input, select, textarea {
 .pill-btn-amber:hover {
   background: #d97706;
   color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.pill-btn-outline-light {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.pill-btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.5);
   transform: translateY(-2px);
 }
 
@@ -430,7 +455,8 @@ button, input, select, textarea {
   position: relative;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
   color: var(--primary);
 }
 
@@ -446,7 +472,8 @@ button, input, select, textarea {
   transition: width 0.25s ease;
 }
 
-.nav-links a:hover::after {
+.nav-links a:hover::after,
+.nav-links a.active::after {
   width: 100%;
 }
 
@@ -625,6 +652,12 @@ button, input, select, textarea {
   z-index: 10;
   animation: float 4s ease-in-out infinite;
   max-width: 90%;
+  color: #1E1B4B; /* Forces dark text in all themes */
+}
+
+/* Force the muted text inside badges to stay dark-mode-safe grey */
+.floating-badge [style*="var(--text-muted)"] {
+  color: #64748B !important;
 }
 
 .floating-badge-top {
@@ -899,12 +932,13 @@ button, input, select, textarea {
   position: fixed;
   top: 100px; /* Positioned nicely below fixed top navbar cover */
   z-index: 50;
-  max-height: calc(100vh - 120px);
+  height: calc(100vh - 110px);
   overflow-y: auto;
+  justify-content: space-between;
 }
 
 .dashboard-main {
-  margin-left: 292px;
+  margin-inline-start: 292px;
   width: calc(100% - 292px);
   display: flex;
   flex-direction: column;
@@ -987,6 +1021,16 @@ button, input, select, textarea {
   font-weight: 700;
 }
 
+.sidebar-menu-btn.logout-btn {
+  color: var(--accent-coral);
+  background: rgba(244, 63, 94, 0.1);
+}
+
+.sidebar-menu-btn.logout-btn:hover {
+  background: var(--accent-coral);
+  color: #ffffff;
+}
+
 .student-streak-card {
   margin-top: 18px;
   background: linear-gradient(135deg, #FFF7ED, #FFEDD5);
@@ -1049,6 +1093,74 @@ button, input, select, textarea {
   gap: 10px;
   font-weight: 700;
   font-size: 0.9rem;
+}
+
+/* DASHBOARD MODULE & LESSON LISTS */
+.lessons-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 0;
+}
+
+.lesson-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.lesson-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.lesson-left span {
+  line-height: 1.4;
+  font-size: 0.95rem;
+}
+
+/* PLAYGROUND / SANDBOX SECTION */
+.playground-box {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  flex-wrap: wrap; /* Fixes overlap on mobile/tablet */
+}
+
+.playground-editor, .canvas-preview {
+  flex: 1;
+  min-width: 300px;
+  width: 100%;
+}
+
+.canvas-preview canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+.code-textarea {
+  width: 100%;
+  min-height: 180px;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1.5px solid var(--border-light);
+  background: var(--bg-surface);
+  color: var(--text-dark);
+  font-family: monospace;
+  font-size: 0.95rem;
+  resize: vertical;
+  margin-top: 12px;
+  margin-bottom: 24px;
 }
 
 /* FOOTER & SOCIAL ICONS */
@@ -1206,7 +1318,12 @@ button, input, select, textarea {
 
 @media (max-width: 1024px) {
   .container {
-    padding: 0 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .nav-container {
+    padding: 12px 20px;
   }
 
   .hamburger-btn {
@@ -1357,15 +1474,15 @@ button, input, select, textarea {
   }
 
   .dashboard-sidebar {
-    position: static;
-    width: 100%;
-    max-height: none;
-    align-items: center;
-    text-align: center;
+    display: none !important;
+  }
+
+  .mobile-navlinks {
+    display: flex !important;
   }
 
   .dashboard-main {
-    margin-left: 0;
+    margin-inline-start: 0;
     width: 100%;
   }
 
@@ -1404,11 +1521,57 @@ button, input, select, textarea {
     gap: 12px;
     text-align: center;
   }
+
+  .dash-topbar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .badge-pill {
+    white-space: normal;
+    text-align: center;
+  }
+
+  .playground-box {
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .playground-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .canvas-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @media (max-width: 768px) {
   .container {
-    padding: 0 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  .nav-container {
+    padding: 12px 14px;
+  }
+
+  .brand-logo {
+    gap: 8px;
+    font-size: 1.2rem;
+  }
+
+  .brand-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
   }
 
   .hero-title {
@@ -1461,5 +1624,14 @@ button, input, select, textarea {
 
   .footer-brand {
     grid-column: span 1;
+  }
+}
+
+/* Center 3rd card in 2-column grid at tablet view */
+@media (min-width: 636px) and (max-width: 935px) {
+  .grid-center-last > :nth-child(3):last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 14px);
   }
 }

@@ -40,12 +40,20 @@
 
       <!-- NAVIGATION MENU -->
       <div id="navMenu" class="nav-menu">
+        <ul class="sidebar-menu mobile-navlinks" style="display: none; width: 100%; border-bottom: 1px solid var(--border-light); padding-bottom: 16px; margin-bottom: 16px;">
+          <li><button class="sidebar-menu-btn active" onclick="switchDashTab('modules', this); closeMobileMenu()">Enrolled Modules</button></li>
+          <li><button class="sidebar-menu-btn" onclick="switchDashTab('submissions', this); closeMobileMenu()">Submit Project Work</button></li>
+          <li><button class="sidebar-menu-btn" onclick="switchDashTab('feedback', this); closeMobileMenu()">Instructor Feedback</button></li>
+          <li><button class="sidebar-menu-btn" onclick="switchDashTab('milestones', this); closeMobileMenu()">Milestones & Badges</button></li>
+          <li><button class="sidebar-menu-btn" onclick="switchDashTab('playground', this); closeMobileMenu()">Interactive Code Sandbox</button></li>
+          <li><button class="sidebar-menu-btn logout-btn" onclick="handleLogout()">Log Out</button></li>
+        </ul>
         <div style="display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap;">
           <!-- Icon-Only Buttons: RTL, Theme -->
           <button class="toggle-btn rtl-toggle-btn" onclick="toggleRTL()" title="Toggle Language Direction RTL/LTR"
             aria-label="Toggle RTL/LTR">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M8 7h12m0 0l-4-4m4 4l-4 4m-8 6H4m0 0l4 4m-4-4l4-4" />
+              <path d="M8 7h12m0 0l-4-4m4 4l-4 4M16 17H4m0 0l4 4m-4-4l4-4" />
             </svg>
           </button>
           <button class="toggle-btn theme-toggle-btn" onclick="toggleTheme()" title="Toggle Dark/Light Theme"
@@ -130,8 +138,7 @@
 
       <!-- LOG OUT BUTTON IN SIDEBAR -->
       <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border-light); width: 100%;">
-        <button class="sidebar-menu-btn" onclick="handleLogout()"
-          style="color: #EF4444; background: rgba(239, 68, 68, 0.08);">
+        <button class="sidebar-menu-btn logout-btn" onclick="handleLogout()">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
             <polyline points="16 17 21 12 16 7"></polyline>
@@ -453,12 +460,12 @@
       <section id="tab-playground" class="dash-section" style="display: none;">
         <div class="playground-box">
           <div class="playground-editor">
-            <div class="playground-header">
-              <h3 style="color:#fff; font-size:1.2rem;">Live Python & Robot Simulator</h3>
+            <div class="playground-header" style="margin-bottom: 12px;">
+              <h3 style="color: var(--text-dark); font-size:1.2rem;">Live Python & Robot Simulator</h3>
               <span class="badge-pill badge-pill-teal">Sandbox Mode</span>
             </div>
 
-            <p style="font-size: 0.85rem; color: #94A3B8;">Type commands to control the autonomous rover on canvas
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Type commands to control the autonomous rover on canvas
               below:</p>
 
             <textarea id="codeEditor" class="code-textarea"># RoboKids Python Simulator
@@ -473,15 +480,15 @@ robot.change_color("#F59E0B")</textarea>
               <button class="pill-btn pill-btn-primary" style="width: 100%; justify-content: center;"
                 onclick="runRobotCode()">Run Robot Code 🤖 ▶</button>
               <button class="pill-btn pill-btn-secondary"
-                style="background: rgba(255,255,255,0.1); color:#fff; border-color:rgba(255,255,255,0.2); width: 100%; justify-content: center;"
+                style="width: 100%; justify-content: center;"
                 onclick="resetRobot()">Reset Rover 🔄</button>
             </div>
           </div>
 
           <div class="canvas-preview">
-            <h4 style="color: #fff; margin-bottom: 12px; font-size: 0.95rem;">Interactive Simulator Canvas</h4>
+            <h4 style="color: var(--text-dark); margin-bottom: 12px; font-size: 0.95rem;">Interactive Simulator Canvas</h4>
             <canvas id="robotCanvas" width="300" height="220"></canvas>
-            <div style="font-size: 0.78rem; color: #94A3B8; margin-top: 10px; text-align: center;" id="robotStatusText">
+            <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 10px; text-align: center;" id="robotStatusText">
               Status: Ready to execute python commands</div>
           </div>
         </div>

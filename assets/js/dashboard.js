@@ -30,6 +30,7 @@ function toggleTheme() {
   const currentTheme = html.getAttribute('data-theme');
   const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
   html.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
 
   const themeBtns = document.querySelectorAll('.theme-toggle-btn');
   themeBtns.forEach(btn => {
@@ -45,8 +46,9 @@ function toggleRTL() {
   const currentDir = html.getAttribute('dir');
   const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
   html.setAttribute('dir', newDir);
+  localStorage.setItem('dir', newDir);
 
-  const rtlIconSVG = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7h12m0 0l-4-4m4 4l-4 4m-8 6H4m0 0l4 4m-4-4l4-4"/></svg>`;
+  const rtlIconSVG = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7h12m0 0l-4-4m4 4l-4 4M16 17H4m0 0l4 4m-4-4l4-4"/></svg>`;
 
   const rtlBtns = document.querySelectorAll('.rtl-toggle-btn');
   rtlBtns.forEach(btn => {
@@ -300,5 +302,24 @@ function runRobotCode() {
 
 // Initial draw on page load if on dashboard
 document.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    const themeBtns = document.querySelectorAll('.theme-toggle-btn');
+    themeBtns.forEach(btn => {
+      btn.innerHTML = savedTheme === 'dark' ? '☀️' : '🌙';
+    });
+  }
+
+  const savedDir = localStorage.getItem('dir');
+  if (savedDir) {
+    document.documentElement.setAttribute('dir', savedDir);
+    const rtlIconSVG = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7h12m0 0l-4-4m4 4l-4 4M16 17H4m0 0l4 4m-4-4l4-4"/></svg>`;
+    const rtlBtns = document.querySelectorAll('.rtl-toggle-btn');
+    rtlBtns.forEach(btn => {
+      btn.innerHTML = rtlIconSVG;
+    });
+  }
+
   initRobotCanvas();
 });
