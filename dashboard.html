@@ -89,13 +89,13 @@
 
       <!-- 4. BOTTOM QUICK TOOLS & LOG OUT ITEM -->
       <div class="sidebar-bottom-box">
-        <!-- QUICK TOOLS: RTL & THEME TOGGLES INSIDE SIDEBAR MENU (MOBILE/TABLET ONLY) -->
+        <!-- QUICK TOOLS: RTL & THEME TOGGLES INSIDE SIDEBAR MENU (WEB & MOBILE) -->
         <div class="sidebar-quick-tools">
-          <button class="toggle-btn rtl-toggle-btn" onclick="toggleRTL()" title="Toggle Language Direction RTL/LTR" aria-label="Toggle RTL/LTR" style="display: flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 12px; font-weight: 700; font-size: 0.82rem;">
+          <button class="toggle-btn rtl-toggle-btn" onclick="toggleRTL()" title="Toggle Language Direction RTL/LTR" aria-label="Toggle RTL/LTR">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7h12m0 0l-4-4m4 4l-4 4M16 17H4m0 0l4 4m-4-4l4-4"/></svg>
             <span>RTL / LTR</span>
           </button>
-          <button class="toggle-btn theme-toggle-btn" onclick="toggleTheme()" title="Toggle Dark/Light Theme" aria-label="Toggle Theme" style="padding: 6px 14px; border-radius: 12px; font-weight: 700; font-size: 0.9rem;">🌙</button>
+          <button class="toggle-btn theme-toggle-btn" onclick="toggleTheme()" title="Toggle Dark/Light Theme" aria-label="Toggle Theme">🌙</button>
         </div>
 
         <button class="fixmaster-menu-btn logout-btn" onclick="handleLogout()" title="Click to log out of dashboard" aria-label="Log Out">
@@ -127,13 +127,6 @@
           <h1 class="welcome-heading">Welcome back, Leo</h1>
           <p class="welcome-subtext">Here is the real-time status of your active coding modules & robotics projects.</p>
         </div>
-
-        <div class="header-right-controls desktop-controls-only">
-          <button class="toggle-btn rtl-toggle-btn" onclick="toggleRTL()" title="Toggle Language Direction RTL/LTR" aria-label="Toggle RTL/LTR">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7h12m0 0l-4-4m4 4l-4 4M16 17H4m0 0l4 4m-4-4l4-4"/></svg>
-          </button>
-          <button class="toggle-btn theme-toggle-btn" onclick="toggleTheme()" title="Toggle Dark/Light Theme" aria-label="Toggle Theme">🌙</button>
-        </div>
       </div>
 
       <!-- ACTION BUTTONS ROW -->
@@ -147,11 +140,11 @@
         <div class="kpi-card">
           <div class="kpi-label">ACTIVE MODULE</div>
           <div class="kpi-value">1 In Progress</div>
-          <div class="kpi-footer-link" onclick="switchDashTab('modules')">Track Lessons →</div>
+          <div class="kpi-footer-link" onclick="switchDashTab('modules')">Track Lessons <span class="rtl-arrow">→</span></div>
         </div>
         <div class="kpi-card">
           <div class="kpi-label">ACADEMY SCORE</div>
-          <div class="kpi-value">98 / 100</div>
+          <div class="kpi-value"><span dir="ltr">98 / 100</span></div>
           <div class="kpi-subtext">5 Completed Projects</div>
         </div>
         <div class="kpi-card">
