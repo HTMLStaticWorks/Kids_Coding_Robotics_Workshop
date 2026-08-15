@@ -184,3 +184,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// Floating Top-to-Bottom Scroll Button Handler
+window.addEventListener('scroll', () => {
+  const topBtn = document.getElementById('backToTopBtn');
+  if (topBtn) {
+    if (window.scrollY > 200) {
+      topBtn.classList.add('visible');
+    } else {
+      topBtn.classList.remove('visible');
+    }
+  }
+});
+
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Eye Icon Password Toggle
+function togglePasswordVisibility(inputId, btn) {
+  const input = document.getElementById(inputId);
+  if (!input) return;
+  if (input.type === 'password') {
+    input.type = 'text';
+    btn.textContent = '🙈';
+    btn.setAttribute('aria-label', 'Hide Password');
+  } else {
+    input.type = 'password';
+    btn.textContent = '👁️';
+    btn.setAttribute('aria-label', 'Show Password');
+  }
+}
+

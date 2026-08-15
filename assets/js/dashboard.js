@@ -66,10 +66,33 @@ function handleLogout() {
   }, 1000);
 }
 
+// Mobile Sidebar Drawer Toggle & Auto-Close
+function toggleMobileSidebar() {
+  const sidebar = document.querySelector('.sidebar-fixmaster');
+  const backdrop = document.querySelector('.sidebar-backdrop');
+  if (sidebar) {
+    sidebar.classList.toggle('open');
+  }
+  if (backdrop) {
+    backdrop.classList.toggle('active');
+  }
+}
+
+function closeMobileSidebar() {
+  const sidebar = document.querySelector('.sidebar-fixmaster');
+  const backdrop = document.querySelector('.sidebar-backdrop');
+  if (sidebar) {
+    sidebar.classList.remove('open');
+  }
+  if (backdrop) {
+    backdrop.classList.remove('active');
+  }
+}
+
 // Tab Switching
 function switchDashTab(tabId, btnElement) {
   const sections = document.querySelectorAll('.dash-section');
-  const buttons = document.querySelectorAll('.sidebar-menu-btn');
+  const buttons = document.querySelectorAll('.fixmaster-menu-btn, .sidebar-menu-btn');
 
   sections.forEach(sec => sec.style.display = 'none');
   buttons.forEach(btn => btn.classList.remove('active'));
@@ -90,6 +113,9 @@ function switchDashTab(tabId, btnElement) {
   if (tabId === 'playground') {
     initRobotCanvas();
   }
+
+  // AUTO-HIDE SIDEBAR DRAWER ON MOBILE & TABLET AFTER CLICKING A MENU ITEM!
+  closeMobileSidebar();
 }
 
 // Module Accordion Toggle
@@ -323,3 +349,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initRobotCanvas();
 });
+
+// Floating Top-to-Bottom Scroll Button Handler
+window.addEventListener('scroll', () => {
+  const topBtn = document.getElementById('backToTopBtn');
+  if (topBtn) {
+    if (window.scrollY > 200) {
+      topBtn.classList.add('visible');
+    } else {
+      topBtn.classList.remove('visible');
+    }
+  }
+});
+
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
