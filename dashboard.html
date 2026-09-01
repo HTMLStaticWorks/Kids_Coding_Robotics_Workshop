@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body>
+<body class="dashboard-body">
 
   <!-- TOP HEADER CONTAINER (FIXMASTER REFERENCE DESIGN) -->
   <div class="dashboard-app-wrapper">
@@ -115,17 +115,28 @@
         </a>
 
         <div class="header-right-controls">
+          <button class="toggle-btn rtl-toggle-btn" onclick="toggleRTL()" title="Toggle Language Direction RTL/LTR" aria-label="Toggle RTL/LTR">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7h12m0 0l-4-4m4 4l-4 4M16 17H4m0 0l4 4m-4-4l4-4"/></svg>
+          </button>
+          <button class="toggle-btn theme-toggle-btn" onclick="toggleTheme()" title="Toggle Dark/Light Theme" aria-label="Toggle Theme">🌙</button>
           <button class="mobile-sidebar-toggle-btn" onclick="toggleMobileSidebar()" aria-label="Toggle Navigation Menu" title="Toggle Sidebar Navigation">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
           </button>
         </div>
       </div>
 
-      <!-- DESKTOP TOP HEADER BAR -->
+      <!-- DESKTOP TOP HEADER BAR WITH TOP-RIGHT PROFILE, THEME & RTL CONTROLS -->
       <div class="main-top-header">
         <div class="header-left-title">
           <h1 class="welcome-heading">Welcome back, Leo</h1>
           <p class="welcome-subtext">Here is the real-time status of your active coding modules & robotics projects.</p>
+        </div>
+
+        <div class="header-right-controls">
+          <button class="toggle-btn rtl-toggle-btn" onclick="toggleRTL()" title="Toggle Language Direction RTL/LTR" aria-label="Toggle RTL/LTR">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7h12m0 0l-4-4m4 4l-4 4M16 17H4m0 0l4 4m-4-4l4-4"/></svg>
+          </button>
+          <button class="toggle-btn theme-toggle-btn" onclick="toggleTheme()" title="Toggle Dark/Light Theme" aria-label="Toggle Theme">🌙</button>
         </div>
       </div>
 
@@ -159,7 +170,7 @@
         <div class="progress-card" style="margin-bottom: 24px;">
           <div class="progress-header">
             <div>
-              <h3 style="font-size: 1.3rem;">Python Arcade & AI Bots</h3>
+              <h3 style="font-size: 1.3rem; margin-bottom: 4px;">Python Arcade & AI Bots</h3>
               <p style="font-size: 0.85rem; color: var(--text-muted);">Cohort #P-2026 • Instructor: Sarah Vance</p>
             </div>
             <div style="font-size: 1.4rem; font-weight: 800; color: var(--primary);">75% Done</div>
@@ -170,11 +181,10 @@
         </div>
 
         <div class="modules-container">
-          <!-- Module 1 -->
+          <!-- Module 1 (No colored emoji icon above title) -->
           <div class="module-item">
             <div class="module-header" onclick="toggleModule(this)">
               <div class="module-info-main">
-                <div class="module-badge-icon">🐍</div>
                 <div class="module-title">
                   <h4>Module 1: Python Fundamentals & Data Logic</h4>
                   <p>4 Lessons • Completed on Aug 2, 2026</p>
@@ -189,24 +199,23 @@
                     <input type="checkbox" class="check-input" checked disabled>
                     <span>Lesson 1.1: Variables, Strings & User Inputs</span>
                   </div>
-                  <span style="color: var(--accent-teal); font-size: 0.85rem;">Completed +100 XP</span>
+                  <span style="color: var(--accent-teal); font-size: 0.85rem; font-weight: 700;">Completed +100 XP</span>
                 </li>
                 <li class="lesson-row">
                   <div class="lesson-left">
                     <input type="checkbox" class="check-input" checked disabled>
                     <span>Lesson 1.2: If/Else Conditionals & Decision Trees</span>
                   </div>
-                  <span style="color: var(--accent-teal); font-size: 0.85rem;">Completed +100 XP</span>
+                  <span style="color: var(--accent-teal); font-size: 0.85rem; font-weight: 700;">Completed +100 XP</span>
                 </li>
               </ul>
             </div>
           </div>
 
-          <!-- Module 2 -->
+          <!-- Module 2 (No colored emoji icon above title) -->
           <div class="module-item">
             <div class="module-header" onclick="toggleModule(this)">
               <div class="module-info-main">
-                <div class="module-badge-icon">🎮</div>
                 <div class="module-title">
                   <h4>Module 2: 2D Pygame Arcade & Collision Physics</h4>
                   <p>3 Lessons • Currently Active</p>
@@ -221,7 +230,7 @@
                     <input type="checkbox" class="check-input" checked onchange="updateProgress(this)">
                     <span>Lesson 2.1: Creating Game Loops & Screen Surfaces</span>
                   </div>
-                  <span style="color: var(--accent-teal); font-size: 0.85rem;">Completed +150 XP</span>
+                  <span style="color: var(--accent-teal); font-size: 0.85rem; font-weight: 700;">Completed +150 XP</span>
                 </li>
                 <li class="lesson-row active-lesson">
                   <div class="lesson-left">
@@ -243,11 +252,10 @@
             </div>
           </div>
 
-          <!-- Module 3 -->
+          <!-- Module 3 (No colored emoji icon above title) -->
           <div class="module-item">
             <div class="module-header" onclick="toggleModule(this)">
               <div class="module-info-main">
-                <div class="module-badge-icon">🤖</div>
                 <div class="module-title">
                   <h4>Module 3: AI Chatbot & Microcontroller Integration</h4>
                   <p>4 Lessons • Unlocks next week</p>
@@ -256,8 +264,7 @@
               <span class="badge-pill" style="background:#E2E8F0; color:#64748B;">Locked 🔒</span>
             </div>
             <div class="module-body">
-              <p style="font-size: 0.9rem; color: var(--text-muted); text-align: center;">Complete Module 2 assignments
-                to unlock this advanced module.</p>
+              <p style="font-size: 0.9rem; color: var(--text-muted); text-align: center; padding: 12px 0;">Complete Module 2 assignments to unlock this advanced module.</p>
             </div>
           </div>
         </div>

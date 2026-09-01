@@ -58,6 +58,23 @@ function toggleRTL() {
   showToast(`Language direction set to ${newDir.toUpperCase()}!`, '⇄');
 }
 
+// Programs Filter Tab Handler
+function filterPrograms(category, btn) {
+  const cards = document.querySelectorAll('.program-card[data-category]');
+  const buttons = document.querySelectorAll('.filter-tab');
+
+  buttons.forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+
+  cards.forEach(card => {
+    if (category === 'all' || card.getAttribute('data-category') === category) {
+      card.style.display = 'flex';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
 // Global Modal Open & Close Handlers
 function openLoginModal() {
   const modal = document.getElementById('loginModal');
@@ -76,8 +93,12 @@ function closeLoginModal() {
 function openEnrollModal(courseName) {
   const modal = document.getElementById('enrollModal');
   const courseInput = document.getElementById('enrollCourseInput');
+  const courseTitle = document.getElementById('enrollCourseTitle');
   if (courseInput && courseName) {
     courseInput.value = courseName;
+  }
+  if (courseTitle && courseName) {
+    courseTitle.innerText = `Enroll in ${courseName}`;
   }
   if (modal) {
     modal.classList.add('active');
@@ -105,6 +126,12 @@ function handleEnrollSubmit(e) {
   e.preventDefault();
   closeEnrollModal();
   showToast('Enrollment request submitted! Our team will contact you.', '🎉');
+}
+
+function handleContactSubmit(e) {
+  e.preventDefault();
+  showToast('Thank you! Your message has been sent to our admissions team.', '📬');
+  e.target.reset();
 }
 
 // Toast Helper
@@ -136,7 +163,7 @@ window.addEventListener('click', (e) => {
   }
 });
 
-// Scroll Spy for Navigation Links
+// Initialize Theme, Direction, and Navigation on Page Load
 document.addEventListener('DOMContentLoaded', () => {
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme) {
@@ -157,31 +184,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const sections = document.querySelectorAll('section');
+  // Active Navigation link detection
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
   const navLinks = document.querySelectorAll('.nav-links a');
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    const href = link.getAttribute('href');
+    if (href === currentPath || (currentPath === '' && href === 'index.html')) {
+      link.classList.add('active');
+    }
+  });
 
-  // Initial call to set active state on load
-  updateActiveLink();
-
-  window.addEventListener('scroll', updateActiveLink);
-
-  function updateActiveLink() {
-    let current = '';
-    
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.clientHeight;
-      if (window.scrollY >= sectionTop - 150) {
-        current = section.getAttribute('id');
-      }
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active');
-      }
-    });
+  if (currentPath === 'index.html' || currentPath === 'home2.html' || currentPath === '') {
+    const homeDropdownToggle = document.querySelector('.nav-dropdown > a');
+    if (homeDropdownToggle) homeDropdownToggle.classList.add('active');
   }
 });
 
@@ -215,4 +231,3 @@ function togglePasswordVisibility(inputId, btn) {
     btn.setAttribute('aria-label', 'Show Password');
   }
 }
-

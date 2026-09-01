@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Studio Location | RoboKidsLab Academy</title>
+  <meta name="description"
+    content="Get in touch with RoboKidsLab Academy. Book a campus tour, request a free trial class, or contact our admissions team.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+  <!-- FLOATING NAVIGATION BAR -->
+  <header class="navbar container">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon">🤖</div>
+        <span>RoboKids<span style="color: var(--primary);">Lab</span></span>
+      </a>
+
+      <!-- HAMBURGER TOGGLE BUTTON FOR <= 1024px VIEW -->
+      <button id="hamburgerBtn" class="hamburger-btn" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <!-- NAVIGATION MENU -->
+      <div id="navMenu" class="nav-menu">
+        <ul class="nav-links">
+          <li class="nav-dropdown">
+            <a href="#">Home <span class="dropdown-caret">▾</span></a>
+            <ul class="nav-dropdown-menu">
+              <li><a href="index.html">Home 1 - Tech Academy</a></li>
+              <li><a href="home2.html">Home 2 - Robotics & Maker Track</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html" onclick="closeMobileMenu()">About</a></li>
+          <li><a href="workshops.html" onclick="closeMobileMenu()">Workshops</a></li>
+          <li><a href="projects.html" onclick="closeMobileMenu()">Projects</a></li>
+          <li><a href="reviews.html" onclick="closeMobileMenu()">Reviews</a></li>
+          <li><a href="contact.html" class="active" onclick="closeMobileMenu()">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="toggle-btn rtl-toggle-btn" onclick="toggleRTL()" title="Toggle Language Direction RTL/LTR"
+            aria-label="Toggle RTL/LTR">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 7h12m0 0l-4-4m4 4l-4 4M16 17H4m0 0l4 4m-4-4l4-4" />
+            </svg>
+          </button>
+          <button class="toggle-btn theme-toggle-btn" onclick="toggleTheme()" title="Toggle Dark/Light Theme"
+            aria-label="Toggle Theme">🌙</button>
+          <button class="toggle-btn" onclick="openLoginModal()" title="Student & Parent Login"
+            aria-label="Log In">👤</button>
+
+          <a href="dashboard.html" class="pill-btn pill-btn-primary" onclick="closeMobileMenu()">Student Dashboard →</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER BANNER -->
+  <section class="container page-header">
+    <div class="badge-pill badge-pill-teal">
+      <span class="dot"></span> 📍 We'd Love To Hear From You
+    </div>
+    <h1>Contact Our Admissions Team</h1>
+    <p>
+      Have questions regarding course placement, hardware kits, or schedule options? Our STEM academic advisors are here to help.
+    </p>
+  </section>
+
+  <!-- CONTACT & LOCATION MAIN SECTION -->
+  <section class="container" style="padding: 20px 0 60px;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 36px; align-items: start;">
+      
+      <!-- Contact Information Card -->
+      <div class="organic-card" style="padding: 36px;">
+        <h3 style="font-size: 1.5rem; margin-bottom: 20px;">Studio Headquarters</h3>
+        
+        <div style="display: flex; flex-direction: column; gap: 24px; margin-bottom: 32px;">
+          <div style="display: flex; align-items: flex-start; gap: 16px;">
+            <div style="width: 44px; height: 44px; border-radius: 14px; background: #EEF2FF; color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;">📍</div>
+            <div>
+              <div style="font-weight: 700; font-size: 1rem; color: var(--text-dark);">Studio Location</div>
+              <div style="font-size: 0.9rem; color: var(--text-muted); margin-top: 2px;">104 Tech Academy Way, Suite 300<br>Innovation District, CA 94016</div>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: flex-start; gap: 16px;">
+            <div style="width: 44px; height: 44px; border-radius: 14px; background: #ECFDF5; color: var(--accent-teal); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;">📞</div>
+            <div>
+              <div style="font-weight: 700; font-size: 1rem; color: var(--text-dark);">Phone / WhatsApp</div>
+              <div style="font-size: 0.9rem; color: var(--text-muted); margin-top: 2px;">(555) 839-2041 (Mon-Fri 9AM-6PM)</div>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: flex-start; gap: 16px;">
+            <div style="width: 44px; height: 44px; border-radius: 14px; background: #FEF3C7; color: #D97706; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;">✉️</div>
+            <div>
+              <div style="font-weight: 700; font-size: 1rem; color: var(--text-dark);">Email Inquiries</div>
+              <div style="font-size: 0.9rem; color: var(--text-muted); margin-top: 2px;">hello@robokidslab.edu</div>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: flex-start; gap: 16px;">
+            <div style="width: 44px; height: 44px; border-radius: 14px; background: #F3E8FF; color: var(--accent-purple); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;">⏰</div>
+            <div>
+              <div style="font-weight: 700; font-size: 1rem; color: var(--text-dark);">Studio & Lab Hours</div>
+              <div style="font-size: 0.9rem; color: var(--text-muted); margin-top: 2px;">Mon - Fri: 9:00 AM – 7:00 PM<br>Saturday: 9:00 AM – 4:00 PM<br>Sunday: Closed for maintenance</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: var(--bg-card); padding: 24px; border-radius: 20px; border: 1px solid var(--border-light); margin-top: 24px;">
+          <div style="font-weight: 700; font-size: 1rem; margin-bottom: 6px;">Connect on Social Channels</div>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">Follow student project spotlights, weekly coding livestreams, and maker tutorials.</p>
+          <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+            <a href="#" class="social-icon" aria-label="Facebook" style="background: var(--primary);"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H7.5v-3H10V9.5C10 7.01 11.49 5.65 13.75 5.65c1.08 0 2.25.19 2.25.19v2.47h-1.27c-1.23 0-1.61.77-1.61 1.56V12h2.78l-.44 3h-2.34v6.8c4.56-.93 8-4.96 8-9.8z"/></svg></a>
+            <a href="#" class="social-icon" aria-label="Instagram" style="background: var(--accent-coral);"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+            <a href="#" class="social-icon" aria-label="YouTube" style="background: #EF4444;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+            <a href="#" class="social-icon" aria-label="Twitter" style="background: #0F172A;"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          </div>
+        </div>
+
+        <div style="background: var(--bg-card); padding: 20px; border-radius: 20px; border: 1px solid var(--border-light); margin-top: 16px;">
+          <div style="font-weight: 700; font-size: 0.95rem; margin-bottom: 6px;">Campus Visits & Tours</div>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Parents are welcome to visit our maker studio every Saturday for guided demonstrations.</p>
+          <button class="pill-btn pill-btn-secondary" style="width: 100%; font-size: 0.85rem;" onclick="showToast('Campus Tour request opened!', '🏛️')">Book In-Person Tour</button>
+        </div>
+      </div>
+
+      <!-- Send Message / Enrollment Inquiry Form -->
+      <div class="organic-card" style="padding: 36px;">
+        <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Send Us a Message</h3>
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 24px;">Fill in the form below and our advisors will respond within 24 business hours.</p>
+
+        <form onsubmit="handleContactSubmit(event)">
+          <div class="form-group">
+            <label>Parent / Guardian Full Name</label>
+            <input type="text" class="form-control" placeholder="e.g. Sarah Vance" required>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px;">
+            <div class="form-group">
+              <label>Contact Email</label>
+              <input type="email" class="form-control" placeholder="parent@gmail.com" required>
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" class="form-control" placeholder="(555) 000-0000">
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px;">
+            <div class="form-group">
+              <label>Child's Age</label>
+              <select class="form-control" required>
+                <option value="6-8">Ages 6–8 (Scratch)</option>
+                <option value="9-12">Ages 9–12 (Python / Robotics)</option>
+                <option value="13-16">Ages 13–16 (Advanced Engineering)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Program of Interest</label>
+              <select class="form-control" required>
+                <option value="scratch">Scratch Explorers</option>
+                <option value="python">Python Arcade & AI</option>
+                <option value="robotics">Robotics & IoT Inventors</option>
+                <option value="trial">Free Trial Class</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Your Message or Questions</label>
+            <textarea class="form-control" rows="4" placeholder="Tell us about your child's interests or any specific questions..."></textarea>
+          </div>
+
+          <button type="submit" class="pill-btn pill-btn-primary" style="width: 100%; justify-content: center;">Send Message 🚀</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTERACTIVE STUDIO LOCATION MAP SECTION -->
+  <section class="container" style="padding: 20px 0 60px;">
+    <div class="section-header">
+      <div class="badge-pill badge-pill-coral section-subtitle">
+        <span class="dot"></span> Interactive Campus Map
+      </div>
+      <h2 class="section-title">Visit Our STEAM Robotics Lab</h2>
+      <p class="section-desc">Located conveniently in the Innovation District with dedicated student lab stations and free visitor parking.</p>
+    </div>
+
+    <div class="organic-card" style="padding: 20px; overflow: hidden; border-radius: 32px;">
+      <div style="width: 100%; height: 380px; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-sm);">
+        <iframe
+          src="https://maps.google.com/maps?q=San+Jose+Innovation+District+CA&t=&z=14&ie=UTF8&iwloc=&output=embed"
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade" title="RoboKidsLab Studio Location Map">
+        </iframe>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 24px; padding: 12px 10px;">
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+          <span style="font-size: 1.4rem;">🚗</span>
+          <div>
+            <div style="font-weight: 700; font-size: 0.95rem; color: var(--text-dark);">Visitor Parking</div>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">Free validated parking in front of Suite 300.</div>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+          <span style="font-size: 1.4rem;">🚆</span>
+          <div>
+            <div style="font-weight: 700; font-size: 0.95rem; color: var(--text-dark);">Metro Transit</div>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">2-minute walk from Innovation Blvd Station.</div>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+          <span style="font-size: 1.4rem;">♿</span>
+          <div>
+            <div style="font-weight: 700; font-size: 0.95rem; color: var(--text-dark);">Accessibility</div>
+            <div style="font-size: 0.85rem; color: var(--text-muted);">Full ramp and elevator access to all lab suites.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="container" style="padding: 20px 0 60px;">
+    <div class="section-header">
+      <div class="badge-pill badge-pill-amber section-subtitle">
+        <span class="dot"></span> Common Inquiries
+      </div>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-desc">Quick answers about our courses, kits, and schedule.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+      <div class="organic-card" style="padding: 24px;">
+        <h4 style="font-size: 1.1rem; margin-bottom: 8px;">Do kids need prior coding experience?</h4>
+        <p style="font-size: 0.88rem; color: var(--text-muted);">No prior experience is needed! Our beginner Scratch tracks start with drag-and-drop logic puzzles suitable for absolute beginners.</p>
+      </div>
+
+      <div class="organic-card" style="padding: 24px;">
+        <h4 style="font-size: 1.1rem; margin-bottom: 8px;">Are hardware kits included in the tuition?</h4>
+        <p style="font-size: 0.88rem; color: var(--text-muted);">Yes, all required microcontrollers, sensors, and robotics components are shipped directly to your home before the first day of class.</p>
+      </div>
+
+      <div class="organic-card" style="padding: 24px;">
+        <h4 style="font-size: 1.1rem; margin-bottom: 8px;">What happens if my child misses a lesson?</h4>
+        <p style="font-size: 0.88rem; color: var(--text-muted);">All lessons are recorded and accessible anytime on the Student Portal, complete with instructor notes and interactive sandbox exercises.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="container" style="margin: 40px auto 80px;">
+    <div
+      style="background: linear-gradient(135deg, var(--primary), var(--accent-purple)); border-radius: 40px; padding: 50px 24px; text-align: center; color: #fff; box-shadow: var(--shadow-lg);">
+      <h2 style="color: #fff; font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 16px;">Ready To Start Your Kid's Coding Journey?</h2>
+      <p style="font-size: 1.05rem; opacity: 0.9; max-width: 600px; margin: 0 auto 32px;">
+        Join over 1,400+ young creators. Access your student dashboard immediately upon enrolment.
+      </p>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap;">
+        <button class="pill-btn pill-btn-amber" style="width: 100%; max-width: 320px;"
+          onclick="openEnrollModal('General Program')">Get Free Trial Class 🎟️</button>
+        <a href="dashboard.html" class="pill-btn pill-btn-outline-light" style="width: 100%; max-width: 320px;">View Demo Dashboard</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo" style="color: #fff; margin-bottom: 14px;">
+            <div class="brand-icon">🤖</div>
+            <span>RoboKids<span style="color: var(--accent-amber);">Lab</span></span>
+          </div>
+          <p style="font-size: 0.9rem;">
+            Empowering children ages 6-16 through hands-on Scratch visual coding, Python text programming, and physical
+            robotics kits.
+          </p>
+
+          <div class="footer-socials"
+            style="display: flex; align-items: center; justify-content: flex-start; gap: 12px; margin-top: 20px;">
+            <a href="#" class="social-icon" aria-label="Facebook"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H7.5v-3H10V9.5C10 7.01 11.49 5.65 13.75 5.65c1.08 0 2.25.19 2.25.19v2.47h-1.27c-1.23 0-1.61.77-1.61 1.56V12h2.78l-.44 3h-2.34v6.8c4.56-.93 8-4.96 8-9.8z"/></svg></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+            <a href="#" class="social-icon" aria-label="YouTube"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+            <a href="#" class="social-icon" aria-label="Twitter"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="workshops.html">Workshops</a></li>
+            <li><a href="projects.html">Projects Showcase</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Student Portal</h4>
+          <ul>
+            <li><a href="dashboard.html">Student Dashboard</a></li>
+            <li><a href="dashboard.html">Enrolled Modules</a></li>
+            <li><a href="dashboard.html">Project Submissions</a></li>
+            <li><a href="dashboard.html">Instructor Feedback</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact & Location</h4>
+          <ul>
+            <li>📍 104 Tech Academy Way, Suite 300</li>
+            <li>📞 (555) 839-2041</li>
+            <li>✉️ hello@robokidslab.edu</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom"
+        style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--border-light);">
+        <p>© 2026 RoboKidsLab Academy. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LOGIN / PORTAL MODAL -->
+  <div id="loginModal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeLoginModal()">✕</button>
+      <div style="text-align: center; margin-bottom: 24px;">
+        <div class="brand-icon" style="margin: 0 auto 12px; width: 50px; height: 50px; font-size: 1.4rem;">🤖</div>
+        <h3 style="font-size: 1.5rem;">Student & Parent Login</h3>
+        <p style="font-size: 0.88rem; color: var(--text-muted);">Access course modules, submit projects & view teacher grades</p>
+      </div>
+
+      <form onsubmit="handleLoginSubmit(event)">
+        <div class="form-group">
+          <label>Student Username or Parent Email</label>
+          <input type="text" class="form-control" placeholder="e.g. leo_vance or parent@gmail.com" value="leo_vance" required>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <div class="password-wrapper">
+            <input type="password" id="modalPasswordInput" class="form-control" placeholder="••••••••" value="password123" required>
+            <button type="button" class="password-toggle-btn" onclick="togglePasswordVisibility('modalPasswordInput', this)" title="Show/Hide Password" aria-label="Toggle Password Visibility">👁️</button>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; font-size: 0.85rem; flex-wrap: nowrap; gap: 8px; width: 100%;">
+          <label style="display:flex; align-items:center; gap:8px; cursor:pointer; white-space: nowrap; font-size: clamp(0.7rem, 3.5vw, 0.85rem);">
+            <input type="checkbox" checked> Remember me
+          </label>
+          <a href="#" class="forgot-link" style="margin-left: auto; white-space: nowrap; font-size: clamp(0.7rem, 3.5vw, 0.85rem);">Forgot Password?</a>
+        </div>
+        <button type="submit" class="pill-btn pill-btn-primary" style="width: 100%; justify-content: center;">Log In To Student Dashboard →</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ENROLLMENT MODAL -->
+  <div id="enrollModal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeEnrollModal()">✕</button>
+      <div style="margin-bottom: 24px; text-align: center;">
+        <span class="badge-pill badge-pill-amber">Quick Enrolment</span>
+        <h3 id="enrollCourseTitle" style="font-size: 1.6rem; margin-top: 8px;">Enroll in Course</h3>
+        <p style="font-size: 0.88rem; color: var(--text-muted);">Reserve a spot for your child in our next cohort.</p>
+      </div>
+
+      <form onsubmit="handleEnrollSubmit(event)">
+        <input type="hidden" id="enrollCourseInput" value="General Program">
+        <div class="form-group">
+          <label>Child's Full Name</label>
+          <input type="text" class="form-control" placeholder="e.g. Leo Vance" required>
+        </div>
+        <div class="form-group">
+          <label>Child's Age</label>
+          <select class="form-control" required>
+            <option value="6-8">6 - 8 Years Old (Scratch)</option>
+            <option value="9-12">9 - 12 Years Old (Python / Robotics)</option>
+            <option value="13-16">13 - 16 Years Old (Advanced Python & Hardware)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Parent Contact Email</label>
+          <input type="email" class="form-control" placeholder="parent@example.com" required>
+        </div>
+        <button type="submit" class="pill-btn pill-btn-primary" style="width: 100%; justify-content: center;">Complete Reservation 🚀</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- FLOATING TOP-TO-BOTTOM SCROLL BUTTON -->
+  <button id="backToTopBtn" class="floating-top-btn" onclick="scrollToTop()" title="Scroll to Top" aria-label="Scroll to Top">↑</button>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toast" class="toast">
+    <span id="toastIcon">✨</span>
+    <span id="toastMsg">Notification message</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

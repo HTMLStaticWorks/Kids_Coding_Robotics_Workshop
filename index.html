@@ -39,16 +39,21 @@
         <span class="hamburger-bar"></span>
       </button>
 
-      <!-- NAVIGATION MENU (COLLAPSIBLE INSIDE HAMBURGER ON <= 1024px) -->
+      <!-- NAVIGATION MENU (MULTI-PAGE DEDICATED ARCHITECTURE) -->
       <div id="navMenu" class="nav-menu">
         <ul class="nav-links">
-          <li><a href="#hero" onclick="closeMobileMenu()">Home</a></li>
-          <li><a href="#workshops" onclick="closeMobileMenu()">Home2</a></li>
-          <li><a href="#curriculum-tracks" onclick="closeMobileMenu()">Pathways</a></li>
-          <li><a href="#faculty-mentors" onclick="closeMobileMenu()">Faculty</a></li>
-          <li><a href="#projects" onclick="closeMobileMenu()">Projects</a></li>
-          <li><a href="#reviews" onclick="closeMobileMenu()">Reviews</a></li>
-          <li><a href="#lab-ecosystem" onclick="closeMobileMenu()">Ecosystem</a></li>
+          <li class="nav-dropdown">
+            <a href="#" class="active">Home <span class="dropdown-caret">▾</span></a>
+            <ul class="nav-dropdown-menu">
+              <li><a href="index.html" class="active">Home 1 - Tech Academy</a></li>
+              <li><a href="home2.html">Home 2 - Robotics & Maker Track</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html" onclick="closeMobileMenu()">About</a></li>
+          <li><a href="workshops.html" onclick="closeMobileMenu()">Workshops</a></li>
+          <li><a href="projects.html" onclick="closeMobileMenu()">Projects</a></li>
+          <li><a href="reviews.html" onclick="closeMobileMenu()">Reviews</a></li>
+          <li><a href="contact.html" onclick="closeMobileMenu()">Contact</a></li>
         </ul>
 
         <div class="nav-actions">
@@ -70,7 +75,7 @@
     </div>
   </header>
 
-  <!-- 1. HOME SECTION (4 IMAGES TOTAL) -->
+  <!-- 1. HOME HERO SECTION -->
   <section id="hero" class="hero container">
     <div class="hero-grid">
       <div class="hero-content">
@@ -89,7 +94,7 @@
         </p>
 
         <div class="hero-cta">
-          <a href="#workshops" class="pill-btn pill-btn-primary">Explore Courses 🚀</a>
+          <a href="workshops.html" class="pill-btn pill-btn-primary">Explore Courses 🚀</a>
           <button class="pill-btn pill-btn-secondary" onclick="openLoginModal()">Try Student Dashboard 💻</button>
         </div>
 
@@ -136,7 +141,7 @@
       </div>
     </div>
 
-    <!-- Home Section Featured Highlight Cards (Images 2, 3, 4) -->
+    <!-- Home Section Featured Highlight Cards -->
     <div class="grid-center-last"
       style="margin-top: 50px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
       <div class="organic-card" style="text-align: center; padding: 20px;">
@@ -171,20 +176,265 @@
     </div>
   </section>
 
-  <!-- 2. HOME 2 SECTION (3 IMAGES) -->
+  <!-- 2. TOTAL LEARNING ECOSYSTEM SECTION (PLACED ABOVE STUDENT SHOWCASE AS SPECIFIED IN ISSUE 2) -->
+  <section id="lab-ecosystem" class="container" style="padding: 60px 0;">
+    <div class="section-header">
+      <div class="badge-pill badge-pill-amber section-subtitle">
+        <span class="dot"></span> Total Learning Ecosystem
+      </div>
+      <h2 class="section-title">Everything Included In Your Workshop Pass</h2>
+      <p class="section-desc">From doorstep hardware delivery to lifetime access to your student code portfolio
+        dashboard.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+      <div class="organic-card" style="padding: 28px; text-align: left;">
+        <div
+          style="width: 52px; height: 52px; border-radius: 16px; background: #EEF2FF; color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 18px;">
+          📦
+        </div>
+        <h4 style="font-size: 1.2rem; margin-bottom: 8px;">Hardware Kit Delivered</h4>
+        <p style="font-size: 0.88rem; color: var(--text-muted);">All physical motors, sensors, microcontrollers, and
+          chassis shipped directly to your home with free return labels.</p>
+      </div>
+
+      <div class="organic-card" style="padding: 28px; text-align: left;">
+        <div
+          style="width: 52px; height: 52px; border-radius: 16px; background: #ECFDF5; color: var(--accent-teal); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 18px;">
+          💻
+        </div>
+        <h4 style="font-size: 1.2rem; margin-bottom: 8px;">Interactive Student Portal</h4>
+        <p style="font-size: 0.88rem; color: var(--text-muted);">Real-time progress dashboard, instructor video grade
+          notes, code sandbox testing, and digital project submissions.</p>
+      </div>
+
+      <div class="organic-card" style="padding: 28px; text-align: left;">
+        <div
+          style="width: 52px; height: 52px; border-radius: 16px; background: #FEF3C7; color: #D97706; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 18px;">
+          🏆
+        </div>
+        <h4 style="font-size: 1.2rem; margin-bottom: 8px;">Badges & Certification</h4>
+        <p style="font-size: 0.88rem; color: var(--text-muted);">Gamified achievement badges unlocked per completed
+          project, plus an official RoboKidsLab Academy Certificate.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. STUDENT PROJECT SHOWCASE & INNOVATION GALLERY -->
+  <section id="projects" class="container" style="padding: 60px 0;">
+    <div class="section-header">
+      <div class="badge-pill badge-pill-coral section-subtitle">
+        <span class="dot"></span> Student Showcase
+      </div>
+      <h2 class="section-title">Student Project Showcase & Innovation Gallery</h2>
+      <p class="section-desc">Explore incredible arcade games, AI chatbots, and smart hardware projects created by our
+        young workshop cadets.</p>
+    </div>
+
+    <div class="grid-center-last"
+      style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px;">
+      <div class="organic-card" style="text-align: center; padding: 20px;">
+        <div style="height: 220px; border-radius: 20px; overflow: hidden; margin-bottom: 16px;">
+          <img src="assets/images/img11.jpg" alt="Student Autonomous Rover Project"
+            style="width:100%; height:100%; object-fit:cover;">
+        </div>
+        <div class="badge-pill badge-pill-teal" style="margin-bottom: 10px;">Robotics Level 3</div>
+        <h3 style="font-size: 1.25rem; margin-bottom: 6px;">Autonomous Solar Rover</h3>
+        <p style="font-size: 0.88rem; color: var(--text-muted);">Built by Leo (Age 10) using ultrasonic distance sensors
+          and servo steering motors.</p>
+      </div>
+
+      <div class="organic-card" style="text-align: center; padding: 20px;">
+        <div style="height: 220px; border-radius: 20px; overflow: hidden; margin-bottom: 16px;">
+          <img src="assets/images/img12.jpg" alt="Pygame Arcade Shooter"
+            style="width:100%; height:100%; object-fit:cover;">
+        </div>
+        <div class="badge-pill badge-pill-coral" style="margin-bottom: 10px;">Python Arcade</div>
+        <h3 style="font-size: 1.25rem; margin-bottom: 6px;">Galactic Defender 2D</h3>
+        <p style="font-size: 0.88rem; color: var(--text-muted);">Created by Maya (Age 11) with Pygame sprite animations
+          and custom score counters.</p>
+      </div>
+
+      <div class="organic-card" style="text-align: center; padding: 20px;">
+        <div style="height: 220px; border-radius: 20px; overflow: hidden; margin-bottom: 16px;">
+          <img src="assets/images/img13.jpg" alt="Scratch Animated Maze Game"
+            style="width:100%; height:100%; object-fit:cover;">
+        </div>
+        <div class="badge-pill badge-pill-amber" style="margin-bottom: 10px;">Scratch Pioneers</div>
+        <h3 style="font-size: 1.25rem; margin-bottom: 6px;">Cosmic Scratch Maze</h3>
+        <p style="font-size: 0.88rem; color: var(--text-muted);">Designed by Ethan (Age 8) with interactive keyboard
+          controls and sound effects.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. WORKSHOPS & PROGRAMS OVERVIEW -->
+  <section id="workshops" class="programs-section container">
+    <div class="section-header">
+      <div class="badge-pill badge-pill-teal section-subtitle">
+        <span class="dot"></span> Hands-on STEM Workshops
+      </div>
+      <h2 class="section-title">Age-Appropriate Programs & Workshops</h2>
+      <p class="section-desc">Small group cohorts (max 8 students per instructor) with real hardware kits and
+        interactive code sandboxes.</p>
+    </div>
+
+    <!-- Filter Pills -->
+    <div class="programs-filter">
+      <button class="filter-tab active" onclick="filterPrograms('all', this)">All Workshops</button>
+      <button class="filter-tab" onclick="filterPrograms('scratch', this)">Scratch (Ages 6-9)</button>
+      <button class="filter-tab" onclick="filterPrograms('python', this)">Python (Ages 10-14)</button>
+      <button class="filter-tab" onclick="filterPrograms('robotics', this)">Robotics (Ages 9-16)</button>
+    </div>
+
+    <div class="programs-grid">
+      <!-- Workshop Card 1 -->
+      <div class="program-card" data-category="scratch">
+        <div class="program-img-wrap">
+          <img src="assets/images/img7.jpg" alt="Scratch visual block coding for kids">
+          <div class="program-tag-floating">
+            <span class="badge-pill badge-pill-amber">Ages 6–9</span>
+          </div>
+        </div>
+        <div class="program-body">
+          <div class="program-meta">
+            <span>🧩 Visual Drag & Drop</span>
+            <span>8 Weeks</span>
+          </div>
+          <h3 class="program-title">Scratch Explorers: Game Design</h3>
+          <p class="program-desc">Kids build animated stories, interactive maze games, and space shooter arcade games
+            while mastering loops, variables, and sprite animation.</p>
+          <ul class="program-highlights">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Build 6 complete Scratch arcade projects
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Master variables, logic loops & collision physics
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Share work directly in the Student Dashboard
+            </li>
+          </ul>
+          <div class="program-footer">
+            <div class="program-price">$249 <span>/ course</span></div>
+            <button class="pill-btn pill-btn-primary" onclick="openEnrollModal('Scratch Explorers')">Enroll Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Workshop Card 2 -->
+      <div class="program-card" data-category="python">
+        <div class="program-img-wrap">
+          <img src="assets/images/img8.jpg" alt="Python programming course for kids">
+          <div class="program-tag-floating">
+            <span class="badge-pill badge-pill-coral">Ages 10–14</span>
+          </div>
+        </div>
+        <div class="program-body">
+          <div class="program-meta">
+            <span>🐍 Real Code Syntax</span>
+            <span>10 Weeks</span>
+          </div>
+          <h3 class="program-title">Python Arcade & AI Bots</h3>
+          <p class="program-desc">Transition from visual block coding to real Python code! Write text scripts, create
+            Pygame graphics, and program intelligent chatbots.</p>
+          <ul class="program-highlights">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Write real Python data structures & functions
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Build 2D Pygame arcade titles & AI mini-apps
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Interactive browser code testing & auto-grading
+            </li>
+          </ul>
+          <div class="program-footer">
+            <div class="program-price">$329 <span>/ course</span></div>
+            <button class="pill-btn pill-btn-primary" onclick="openEnrollModal('Python Arcade & AI Bots')">Enroll
+              Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Workshop Card 3 -->
+      <div class="program-card" data-category="robotics">
+        <div class="program-img-wrap">
+          <img src="assets/images/img9.jpg" alt="Robotics kit and hardware building workshop">
+          <div class="program-tag-floating">
+            <span class="badge-pill badge-pill-teal">Ages 9–16</span>
+          </div>
+        </div>
+        <div class="program-body">
+          <div class="program-meta">
+            <span>⚙️ Hardware + Sensor Code</span>
+            <span>12 Weeks</span>
+          </div>
+          <h3 class="program-title">Robotics & IoT Inventors</h3>
+          <p class="program-desc">Assemble real smart rovers, configure ultrasonic distance sensors, servo motors, and
+            program autonomous obstacle-avoiding robots.</p>
+          <ul class="program-highlights">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Includes takeaway RoboMaster Hardware Kit
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Program optical sensors, line followers & Bluetooth
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Compete in friendly end-of-term Robo Challenge
+            </li>
+          </ul>
+          <div class="program-footer">
+            <div class="program-price">$399 <span>/ course</span></div>
+            <button class="pill-btn pill-btn-primary" onclick="openEnrollModal('Robotics & IoT Inventors')">Enroll
+              Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. IDEA TO INVENTION LEARNING PATH SECTION -->
   <section id="home2" class="container" style="padding: 60px 0;">
     <div class="roadmap-section">
       <div class="container">
         <div class="section-header">
           <div class="badge-pill badge-pill-amber section-subtitle">
-            <span class="dot"></span> Home 2 Track Experience
+            <span class="dot"></span> Structured Learning Path
           </div>
           <h2 class="section-title">The Idea To Invention Learning Path</h2>
           <p class="section-desc">Our proven 4-stage methodology ensures children gain confidence, problem-solving
             skills, and real tech fundamentals.</p>
         </div>
 
-        <!-- 3 Feature Images for Home 2 -->
+        <!-- 3 Feature Images -->
         <div class="grid-center-last"
           style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; margin-bottom: 40px;">
           <div class="program-card">
@@ -254,160 +504,7 @@
     </div>
   </section>
 
-  <!-- 3. WORKSHOPS SECTION (3 IMAGES) -->
-  <section id="workshops" class="programs-section container">
-    <div class="section-header">
-      <div class="badge-pill badge-pill-teal section-subtitle">
-        <span class="dot"></span> Hands-on STEM Workshops
-      </div>
-      <h2 class="section-title">Age-Appropriate Programs & Workshops</h2>
-      <p class="section-desc">Small group cohorts (max 8 students per instructor) with real hardware kits and
-        interactive code sandboxes.</p>
-    </div>
-
-    <!-- Filter Pills -->
-    <div class="programs-filter">
-      <button class="filter-tab active" onclick="filterPrograms('all', this)">All Workshops</button>
-      <button class="filter-tab" onclick="filterPrograms('scratch', this)">Scratch (Ages 6-9)</button>
-      <button class="filter-tab" onclick="filterPrograms('python', this)">Python (Ages 10-14)</button>
-      <button class="filter-tab" onclick="filterPrograms('robotics', this)">Robotics (Ages 9-16)</button>
-    </div>
-
-    <div class="programs-grid">
-      <!-- Workshop Card 1 (Image 7) -->
-      <div class="program-card" data-category="scratch">
-        <div class="program-img-wrap">
-          <img src="assets/images/img7.jpg" alt="Scratch visual block coding for kids">
-          <div class="program-tag-floating">
-            <span class="badge-pill badge-pill-amber">Ages 6–9</span>
-          </div>
-        </div>
-        <div class="program-body">
-          <div class="program-meta">
-            <span>🧩 Visual Drag & Drop</span>
-            <span>8 Weeks</span>
-          </div>
-          <h3 class="program-title">Scratch Explorers: Game Design</h3>
-          <p class="program-desc">Kids build animated stories, interactive maze games, and space shooter arcade games
-            while mastering loops, variables, and sprite animation.</p>
-          <ul class="program-highlights">
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Build 6 complete Scratch arcade projects
-            </li>
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Master variables, logic loops & collision physics
-            </li>
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Share work directly in the Student Dashboard
-            </li>
-          </ul>
-          <div class="program-footer">
-            <div class="program-price">$249 <span>/ course</span></div>
-            <button class="pill-btn pill-btn-primary" onclick="openEnrollModal('Scratch Explorers')">Enroll Now</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Workshop Card 2 (Image 8) -->
-      <div class="program-card" data-category="python">
-        <div class="program-img-wrap">
-          <img src="assets/images/img8.jpg" alt="Python programming course for kids">
-          <div class="program-tag-floating">
-            <span class="badge-pill badge-pill-coral">Ages 10–14</span>
-          </div>
-        </div>
-        <div class="program-body">
-          <div class="program-meta">
-            <span>🐍 Real Code Syntax</span>
-            <span>10 Weeks</span>
-          </div>
-          <h3 class="program-title">Python Arcade & AI Bots</h3>
-          <p class="program-desc">Transition from visual block coding to real Python code! Write text scripts, create
-            Pygame graphics, and program intelligent chatbots.</p>
-          <ul class="program-highlights">
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Write real Python data structures & functions
-            </li>
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Build 2D Pygame arcade titles & AI mini-apps
-            </li>
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Interactive browser code testing & auto-grading
-            </li>
-          </ul>
-          <div class="program-footer">
-            <div class="program-price">$329 <span>/ course</span></div>
-            <button class="pill-btn pill-btn-primary" onclick="openEnrollModal('Python Arcade & AI Bots')">Enroll
-              Now</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Workshop Card 3 (Image 9) -->
-      <div class="program-card" data-category="robotics">
-        <div class="program-img-wrap">
-          <img src="assets/images/img9.jpg" alt="Robotics kit and hardware building workshop">
-          <div class="program-tag-floating">
-            <span class="badge-pill badge-pill-teal">Ages 9–16</span>
-          </div>
-        </div>
-        <div class="program-body">
-          <div class="program-meta">
-            <span>⚙️ Hardware + Sensor Code</span>
-            <span>12 Weeks</span>
-          </div>
-          <h3 class="program-title">Robotics & IoT Inventors</h3>
-          <p class="program-desc">Assemble real smart rovers, configure ultrasonic distance sensors, servo motors, and
-            program autonomous obstacle-avoiding robots.</p>
-          <ul class="program-highlights">
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Includes takeaway RoboMaster Hardware Kit
-            </li>
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Program optical sensors, line followers & Bluetooth
-            </li>
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Compete in friendly end-of-term Robo Challenge
-            </li>
-          </ul>
-          <div class="program-footer">
-            <div class="program-price">$399 <span>/ course</span></div>
-            <button class="pill-btn pill-btn-primary" onclick="openEnrollModal('Robotics & IoT Inventors')">Enroll
-              Now</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4. REVIEWS SECTION -->
+  <!-- 6. PARENT & STUDENT STORIES SECTION (MOVED TO SECOND-LAST POSITION AS SPECIFIED IN ISSUE 1) -->
   <section id="reviews" class="container" style="padding: 60px 0;">
     <div class="section-header">
       <div class="badge-pill badge-pill-teal section-subtitle">
@@ -416,7 +513,7 @@
       <h2 class="section-title">Loved By Kids, Trusted By Parents</h2>
     </div>
 
-    <!-- Review Showcase Image (Image 10) -->
+    <!-- Review Showcase Image -->
     <div
       style="margin-bottom: 32px; border-radius: 28px; overflow: hidden; height: 260px; box-shadow: var(--shadow-md);">
       <img src="assets/images/img10.jpg" alt="Parent & Student Workshop Review Showcase"
@@ -459,279 +556,7 @@
     </div>
   </section>
 
-  <!-- 5. NEW SECTION 1: STUDENT PROJECT SHOWCASE -->
-  <section id="projects" class="container" style="padding: 60px 0;">
-    <div class="section-header">
-      <div class="badge-pill badge-pill-coral section-subtitle">
-        <span class="dot"></span> Student Showcase
-      </div>
-      <h2 class="section-title">Student Project Showcase & Innovation Gallery</h2>
-      <p class="section-desc">Explore incredible arcade games, AI chatbots, and smart hardware projects created by our
-        young workshop cadets.</p>
-    </div>
-
-    <div class="grid-center-last"
-      style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px;">
-      <div class="organic-card" style="text-align: center; padding: 20px;">
-        <div style="height: 220px; border-radius: 20px; overflow: hidden; margin-bottom: 16px;">
-          <img src="assets/images/img11.jpg" alt="Student Autonomous Rover Project"
-            style="width:100%; height:100%; object-fit:cover;">
-        </div>
-        <div class="badge-pill badge-pill-teal" style="margin-bottom: 10px;">Robotics Level 3</div>
-        <h3 style="font-size: 1.25rem; margin-bottom: 6px;">Autonomous Solar Rover</h3>
-        <p style="font-size: 0.88rem; color: var(--text-muted);">Built by Leo (Age 10) using ultrasonic distance sensors
-          and servo steering motors.</p>
-      </div>
-
-      <div class="organic-card" style="text-align: center; padding: 20px;">
-        <div style="height: 220px; border-radius: 20px; overflow: hidden; margin-bottom: 16px;">
-          <img src="assets/images/img12.jpg" alt="Pygame Arcade Shooter"
-            style="width:100%; height:100%; object-fit:cover;">
-        </div>
-        <div class="badge-pill badge-pill-coral" style="margin-bottom: 10px;">Python Arcade</div>
-        <h3 style="font-size: 1.25rem; margin-bottom: 6px;">Galactic Defender 2D</h3>
-        <p style="font-size: 0.88rem; color: var(--text-muted);">Created by Maya (Age 11) with Pygame sprite animations
-          and custom score counters.</p>
-      </div>
-
-      <div class="organic-card" style="text-align: center; padding: 20px;">
-        <div style="height: 220px; border-radius: 20px; overflow: hidden; margin-bottom: 16px;">
-          <img src="assets/images/img13.jpg" alt="Scratch Animated Maze Game"
-            style="width:100%; height:100%; object-fit:cover;">
-        </div>
-        <div class="badge-pill badge-pill-amber" style="margin-bottom: 10px;">Scratch Pioneers</div>
-        <h3 style="font-size: 1.25rem; margin-bottom: 6px;">Cosmic Scratch Maze</h3>
-        <p style="font-size: 0.88rem; color: var(--text-muted);">Designed by Ethan (Age 8) with interactive keyboard
-          controls and sound effects.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6. NEW SECTION 2: HARDWARE MAKER LAB -->
-  <section id="maker-lab" class="container" style="padding: 60px 0;">
-    <div style="background: var(--bg-card); border-radius: 40px; padding: 60px 32px;">
-      <div class="section-header">
-        <div class="badge-pill badge-pill-amber section-subtitle">
-          <span class="dot"></span> Hardware Suite
-        </div>
-        <h2 class="section-title">Hardware Maker Lab & Equipment Suite</h2>
-        <p class="section-desc">Our studio is fully stocked with student-safe microcontrollers, soldering stations,
-          optical sensors, and 3D printing stations.</p>
-      </div>
-
-      <div class="grid-center-last"
-        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px;">
-        <div class="organic-card" style="text-align: center; padding: 20px;">
-          <div style="height: 200px; border-radius: 20px; overflow: hidden; margin-bottom: 16px;">
-            <img src="assets/images/img14.jpg" alt="Smart Microcontroller Board"
-              style="width:100%; height:100%; object-fit:cover;">
-          </div>
-          <h4 style="font-size: 1.2rem; margin-bottom: 6px;">Microcontroller Kits</h4>
-          <p style="font-size: 0.88rem; color: var(--text-muted);">Hands-on circuit prototyping boards and jumper wire
-            components.</p>
-        </div>
-
-        <div class="organic-card" style="text-align: center; padding: 20px;">
-          <div style="height: 200px; border-radius: 20px; overflow: hidden; margin-bottom: 16px;">
-            <img src="assets/images/img15.jpg" alt="Optical & Obstacle Sensors"
-              style="width:100%; height:100%; object-fit:cover;">
-          </div>
-          <h4 style="font-size: 1.2rem; margin-bottom: 6px;">Sensor Technology Suite</h4>
-          <p style="font-size: 0.88rem; color: var(--text-muted);">Infrared line followers, ultrasonic sonar distance
-            sensors, and LED arrays.</p>
-        </div>
-
-        <div class="organic-card" style="text-align: center; padding: 20px;">
-          <div style="height: 200px; border-radius: 20px; overflow: hidden; margin-bottom: 16px;">
-            <img src="assets/images/img16.jpg" alt="Robotics Arena & Testing Track"
-              style="width:100%; height:100%; object-fit:cover;">
-          </div>
-          <h4 style="font-size: 1.2rem; margin-bottom: 6px;">Interactive Testing Arena</h4>
-          <p style="font-size: 0.88rem; color: var(--text-muted);">Custom arena tracks where students test obstacle
-            avoidance and race rovers.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 7. NEW SECTION 1: SPECIALIZED CURRICULUM PATHWAYS -->
-  <section id="curriculum-tracks" class="container" style="padding: 60px 0;">
-    <div class="section-header">
-      <div class="badge-pill badge-pill-coral section-subtitle">
-        <span class="dot"></span> Structured Pathways
-      </div>
-      <h2 class="section-title">Specialized Coding & Engineering Pathways</h2>
-      <p class="section-desc">Designed by computer scientists & educators to take kids from foundational logic to
-        real-world software & robotics engineering.</p>
-    </div>
-
-    <div class="grid-center-last" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px;">
-      <!-- Track 1: Scratch -->
-      <div class="organic-card" style="display: flex; flex-direction: column; justify-content: space-between;">
-        <div>
-          <div
-            style="height: 220px; border-radius: 20px; overflow: hidden; margin-bottom: 20px; box-shadow: var(--shadow-sm);">
-            <img src="assets/images/scratch.png" alt="Scratch Creative Block Studio"
-              style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div class="badge-pill badge-pill-amber" style="margin-bottom: 12px;">Ages 6–9 • Beginner</div>
-          <h3 style="font-size: 1.4rem; margin-bottom: 10px;">Scratch 3.0 Creative Block Studio</h3>
-          <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 16px;">
-            Young coders learn algorithmic thinking, loop structures, collision detection, and variable control by
-            creating interactive games and animated stories.
-          </p>
-        </div>
-        <div
-          style="border-top: 1px solid var(--border-light); padding-top: 16px; display: flex; align-items: center; justify-content: space-between;">
-          <span style="font-size: 0.85rem; font-weight: 700; color: var(--primary);">4-Week Cohort</span>
-          <button class="pill-btn pill-btn-primary" style="padding: 8px 18px; font-size: 0.85rem;"
-            onclick="openEnrollModal('Scratch Studio')">Enroll Track →</button>
-        </div>
-      </div>
-
-      <!-- Track 2: Python -->
-      <div class="organic-card" style="display: flex; flex-direction: column; justify-content: space-between;">
-        <div>
-          <div
-            style="height: 220px; border-radius: 20px; overflow: hidden; margin-bottom: 20px; box-shadow: var(--shadow-sm);">
-            <img src="assets/images/python.png" alt="Python Arcade & AI Track"
-              style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div class="badge-pill badge-pill-teal" style="margin-bottom: 12px;">Ages 9–13 • Intermediate</div>
-          <h3 style="font-size: 1.4rem; margin-bottom: 10px;">Python Arcade & AI Game Dev</h3>
-          <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 16px;">
-            Transition from drag-and-drop to real syntax. Kids write Pygame arcade loops, text-based chatbots, data
-            structures, and object-oriented logic.
-          </p>
-        </div>
-        <div
-          style="border-top: 1px solid var(--border-light); padding-top: 16px; display: flex; align-items: center; justify-content: space-between;">
-          <span style="font-size: 0.85rem; font-weight: 700; color: var(--accent-teal);">6-Week Cohort</span>
-          <button class="pill-btn pill-btn-primary" style="padding: 8px 18px; font-size: 0.85rem;"
-            onclick="openEnrollModal('Python Arcade')">Enroll Track →</button>
-        </div>
-      </div>
-
-      <!-- Track 3: Robotics -->
-      <div class="organic-card" style="display: flex; flex-direction: column; justify-content: space-between;">
-        <div>
-          <div
-            style="height: 220px; border-radius: 20px; overflow: hidden; margin-bottom: 20px; box-shadow: var(--shadow-sm);">
-            <img src="assets/images/robotics.png" alt="Hardware Engineering & Autonomous Robotics"
-              style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-          <div class="badge-pill badge-pill-purple" style="margin-bottom: 12px;">Ages 10–16 • Advanced</div>
-          <h3 style="font-size: 1.4rem; margin-bottom: 10px;">Hardware Robotics Engineering</h3>
-          <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 16px;">
-            Build physical rovers with microcontrollers, ultrasonic distance sensors, servo motors, and line-following
-            hardware with live sensor telemetry.
-          </p>
-        </div>
-        <div
-          style="border-top: 1px solid var(--border-light); padding-top: 16px; display: flex; align-items: center; justify-content: space-between;">
-          <span style="font-size: 0.85rem; font-weight: 700; color: var(--accent-purple);">8-Week Cohort</span>
-          <button class="pill-btn pill-btn-primary" style="padding: 8px 18px; font-size: 0.85rem;"
-            onclick="openEnrollModal('Hardware Robotics')">Enroll Track →</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 8. NEW SECTION 2: CERTIFIED LEAD FACULTY & MENTORS -->
-  <section id="faculty-mentors" class="container" style="padding: 60px 0;">
-    <div class="organic-card"
-      style="padding: 40px; background: linear-gradient(135deg, rgba(79, 70, 229, 0.04), rgba(16, 185, 129, 0.04));">
-      <div
-        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 36px; align-items: center;">
-        <div>
-          <div class="badge-pill badge-pill-purple" style="margin-bottom: 14px;">
-            <span class="dot"></span> Expert Mentorship
-          </div>
-          <h2 style="font-size: clamp(1.8rem, 3.5vw, 2.4rem); margin-bottom: 16px;">Meet Our Lead STEM Instructors &
-            Mentors</h2>
-          <p style="font-size: 0.98rem; color: var(--text-dark); margin-bottom: 24px; line-height: 1.6;">
-            Every cohort is led by background-checked STEM educators with degrees in Computer Science and Mechanical
-            Engineering. We maintain a strict <strong>1:6 student-to-mentor ratio</strong> to ensure every cadet gets
-            personal guidance and code review.
-          </p>
-          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
-            <div
-              style="background: var(--bg-card); padding: 16px; border-radius: 16px; border: 1px solid var(--border-light);">
-              <div style="font-size: 1.5rem; font-weight: 800; color: var(--primary);">1:6 Max</div>
-              <div style="font-size: 0.82rem; color: var(--text-muted);">Cohort Student Ratio</div>
-            </div>
-            <div
-              style="background: var(--bg-card); padding: 16px; border-radius: 16px; border: 1px solid var(--border-light);">
-              <div style="font-size: 1.5rem; font-weight: 800; color: var(--accent-teal);">&lt;24 hrs</div>
-              <div style="font-size: 0.82rem; color: var(--text-muted);">Code Review Feedback</div>
-            </div>
-          </div>
-        </div>
-
-        <div style="text-align: center;">
-          <div style="position: relative; display: inline-block; max-width: 380px; width: 100%;">
-            <div
-              style="border-radius: 28px; overflow: hidden; height: 340px; box-shadow: var(--shadow-lg); border: 4px solid var(--bg-card);">
-              <img src="assets/images/instructor.png" alt="Lead Robotics Instructor & Mentor"
-                style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <div
-              style="position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%); background: var(--bg-card); padding: 12px 24px; border-radius: 30px; box-shadow: var(--shadow-md); border: 1px solid var(--border-light); white-space: nowrap;">
-              <div style="font-weight: 800; font-size: 1rem; color: var(--text-dark);">Sarah Vance & Master Faculty
-              </div>
-              <div style="font-size: 0.78rem; color: var(--text-muted);">Senior Robotics & AI Workshop Directors</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 9. NEW SECTION 3: WORKSHOP EXPERIENCE & HARDWARE KITS -->
-  <section id="lab-ecosystem" class="container" style="padding: 60px 0;">
-    <div class="section-header">
-      <div class="badge-pill badge-pill-amber section-subtitle">
-        <span class="dot"></span> Total Learning Ecosystem
-      </div>
-      <h2 class="section-title">Everything Included In Your Workshop Pass</h2>
-      <p class="section-desc">From doorstep hardware delivery to lifetime access to your student code portfolio
-        dashboard.</p>
-    </div>
-
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
-      <div class="organic-card" style="padding: 28px; text-align: left;">
-        <div
-          style="width: 52px; height: 52px; border-radius: 16px; background: #EEF2FF; color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 18px;">
-          📦
-        </div>
-        <h4 style="font-size: 1.2rem; margin-bottom: 8px;">Hardware Kit Delivered</h4>
-        <p style="font-size: 0.88rem; color: var(--text-muted);">All physical motors, sensors, microcontrollers, and
-          chassis shipped directly to your home with free return labels.</p>
-      </div>
-
-      <div class="organic-card" style="padding: 28px; text-align: left;">
-        <div
-          style="width: 52px; height: 52px; border-radius: 16px; background: #ECFDF5; color: var(--accent-teal); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 18px;">
-          💻
-        </div>
-        <h4 style="font-size: 1.2rem; margin-bottom: 8px;">Interactive Student Portal</h4>
-        <p style="font-size: 0.88rem; color: var(--text-muted);">Real-time progress dashboard, instructor video grade
-          notes, code sandbox testing, and digital project submissions.</p>
-      </div>
-
-      <div class="organic-card" style="padding: 28px; text-align: left;">
-        <div
-          style="width: 52px; height: 52px; border-radius: 16px; background: #FEF3C7; color: #D97706; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 18px;">
-          🏆
-        </div>
-        <h4 style="font-size: 1.2rem; margin-bottom: 8px;">Badges & Certification</h4>
-        <p style="font-size: 0.88rem; color: var(--text-muted);">Gamified achievement badges unlocked per completed
-          project, plus an official RoboKidsLab Academy Certificate.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA BANNER -->
+  <!-- 7. CTA BANNER (LAST CONTENT SECTION BEFORE FOOTER) -->
   <section class="container" style="margin: 40px auto 80px;">
     <div
       style="background: linear-gradient(135deg, var(--primary), var(--accent-purple)); border-radius: 40px; padding: 50px 24px; text-align: center; color: #fff; box-shadow: var(--shadow-lg);">
@@ -764,7 +589,7 @@
           </p>
 
           <div class="footer-socials"
-            style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 20px;">
+            style="display: flex; align-items: center; justify-content: flex-start; gap: 12px; margin-top: 20px;">
             <a href="#" class="social-icon" aria-label="Facebook">
               <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
                 <path
@@ -795,12 +620,12 @@
         <div class="footer-col">
           <h4>Navigation</h4>
           <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#home2">Home 2</a></li>
-            <li><a href="#workshops">Workshops</a></li>
-            <li><a href="#reviews">Reviews</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#maker-lab">Maker Lab</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="workshops.html">Workshops</a></li>
+            <li><a href="projects.html">Projects Showcase</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
           </ul>
         </div>
 
@@ -808,7 +633,7 @@
           <h4>Student Portal</h4>
           <ul>
             <li><a href="dashboard.html">Student Dashboard</a></li>
-            <li><a href="dashboard.html">Course Modules</a></li>
+            <li><a href="dashboard.html">Enrolled Modules</a></li>
             <li><a href="dashboard.html">Project Submissions</a></li>
             <li><a href="dashboard.html">Instructor Feedback</a></li>
           </ul>
@@ -842,7 +667,7 @@
           grades</p>
       </div>
 
-      <form onsubmit="handleLogin(event)">
+      <form onsubmit="handleLoginSubmit(event)">
         <div class="form-group">
           <label>Student Username or Parent Email</label>
           <input type="text" class="form-control" placeholder="e.g. leo_vance or parent@gmail.com" value="leo_vance"
@@ -885,6 +710,7 @@
       </div>
 
       <form onsubmit="handleEnrollSubmit(event)">
+        <input type="hidden" id="enrollCourseInput" value="General Program">
         <div class="form-group">
           <label>Child's Full Name</label>
           <input type="text" class="form-control" placeholder="e.g. Leo Vance" required>
