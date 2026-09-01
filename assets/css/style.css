@@ -1971,6 +1971,192 @@ button, input, select, textarea {
   }
 }
 
+/* FEATURE BANNER & SPLIT SECTION LAYOUTS */
+.feature-banner-box {
+  border-radius: 36px;
+  padding: 48px 36px;
+  border: 1px solid var(--border-light);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.feature-banner-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.feature-banner-left {
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.feature-banner-left ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.feature-banner-left li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.feature-banner-left li .check-icon {
+  flex-shrink: 0;
+  font-weight: 800;
+  margin-top: 2px;
+}
+
+@media (max-width: 992px) {
+  .feature-banner-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .feature-banner-box {
+    padding: 28px 18px !important;
+    border-radius: 28px !important;
+  }
+
+  .feature-banner-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .feature-banner-left li {
+    font-size: 0.88rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .feature-banner-box {
+    padding: 20px 14px !important;
+    border-radius: 20px !important;
+  }
+
+  .feature-banner-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .feature-banner-left li {
+    font-size: 0.84rem !important;
+    gap: 8px !important;
+  }
+}
+
+/* STAT MATRIX 2x2 GRID (Safety & Support, Annual Event cards equal sizing) */
+.stat-matrix-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  grid-auto-rows: 1fr !important;
+  gap: 14px !important;
+  align-items: stretch !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  min-width: 0 !important;
+}
+
+.stat-matrix-card {
+  text-align: center !important;
+  padding: 22px 14px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  height: 100% !important;
+  min-height: 135px !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+}
+
+.stat-matrix-card .stat-value {
+  font-size: clamp(1.6rem, 2.4vw, 2.2rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
+  margin-bottom: 6px !important;
+  word-break: break-word !important;
+}
+
+.stat-matrix-card .stat-label {
+  font-size: 0.85rem !important;
+  color: var(--text-muted) !important;
+  line-height: 1.35 !important;
+  text-align: center !important;
+  word-break: break-word !important;
+}
+
+@media (max-width: 768px) {
+  .stat-matrix-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-auto-rows: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .stat-matrix-card {
+    padding: 16px 10px !important;
+    min-height: 120px !important;
+    border-radius: 22px !important;
+  }
+
+  .stat-matrix-card .stat-value {
+    font-size: 1.6rem !important;
+    margin-bottom: 4px !important;
+  }
+
+  .stat-matrix-card .stat-label {
+    font-size: 0.78rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-matrix-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-auto-rows: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .stat-matrix-card {
+    padding: 14px 6px !important;
+    min-height: 110px !important;
+    border-radius: 16px !important;
+  }
+
+  .stat-matrix-card .stat-value {
+    font-size: 1.35rem !important;
+    margin-bottom: 4px !important;
+  }
+
+  .stat-matrix-card .stat-label {
+    font-size: 0.72rem !important;
+    line-height: 1.25 !important;
+  }
+}
+
 /* FLOATING TOP-TO-BOTTOM SCROLL BUTTON */
 .floating-top-btn {
   position: fixed;
