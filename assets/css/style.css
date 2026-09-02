@@ -208,8 +208,11 @@ button, input, select, textarea {
 .container {
   max-width: 1280px;
   width: 100%;
-  margin: 0 auto;
-  padding: 0 24px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  box-sizing: border-box;
 }
 
 /* FORM CONTROLS & INPUT STYLING */
@@ -1849,8 +1852,8 @@ button, input, select, textarea {
 
 @media (max-width: 768px) {
   .container {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
   }
   
   .nav-container {
@@ -1921,6 +1924,13 @@ button, input, select, textarea {
   }
 }
 
+@media (max-width: 480px) {
+  .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
 /* Center 3rd card in 2-column grid at tablet view & prevent card overlap */
 .organic-card {
   background: var(--bg-surface);
@@ -1937,11 +1947,19 @@ button, input, select, textarea {
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.grid-center-last {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 @media (min-width: 640px) and (max-width: 1024px) {
   .grid-center-last {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 28px !important;
+    gap: 24px !important;
   }
 
   .grid-center-last > :nth-child(3):last-child {
@@ -1956,7 +1974,7 @@ button, input, select, textarea {
   .grid-center-last {
     display: grid !important;
     grid-template-columns: 1fr !important;
-    gap: 24px !important;
+    gap: 20px !important;
   }
 
   .grid-center-last > :nth-child(3):last-child {
