@@ -2157,6 +2157,52 @@ button, input, select, textarea {
   }
 }
 
+/* 4-COLUMN RESPONSIVE GRID (How Projects Are Built, Educational Philosophy, Learning Cadence, Impact Results) */
+.lifecycle-pillars-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 24px !important;
+  align-items: stretch !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.lifecycle-pillars-grid .organic-card {
+  height: 100% !important;
+  min-height: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  padding: 28px 24px !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+@media (max-width: 1024px) {
+  .lifecycle-pillars-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 24px !important;
+  }
+  
+  .lifecycle-pillars-grid .organic-card {
+    padding: 26px 20px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .lifecycle-pillars-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  .lifecycle-pillars-grid .organic-card {
+    padding: 22px 18px !important;
+  }
+}
+
 /* FLOATING TOP-TO-BOTTOM SCROLL BUTTON */
 .floating-top-btn {
   position: fixed;
